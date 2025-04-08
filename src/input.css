@@ -2,6 +2,6 @@
 @plugin "daisyui";
 
 @theme{
-    --color-main: #5B78F6;
-    --shadow-hero-card: #5B78F630 10px 48px 100px 0px;
+    --color-main: #593DAB;
+    --shadow-hero-card: #593DAB30 10px 48px 100px 0px;
 }
