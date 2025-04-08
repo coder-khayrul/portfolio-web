@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme{
+    --color-main: #5B78F6;
+    --shadow-hero-card: #5B78F630 10px 48px 100px 0px;
+}
