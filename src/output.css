@@ -1429,17 +1429,11 @@
   .w-\[50px\] {
     width: 50px;
   }
-  .w-\[80px\] {
-    width: 80px;
-  }
   .w-\[90\%\] {
     width: 90%;
   }
   .w-\[calc\(100\%_-_70px\)\] {
     width: calc(100% - 70px);
-  }
-  .w-\[calc\(100\%_-_120px\)\] {
-    width: calc(100% - 120px);
   }
   .w-auto {
     width: auto;
@@ -1504,6 +1498,9 @@
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-\[27px\] {
+    gap: 27px;
   }
   .gap-\[30px\] {
     gap: 30px;
@@ -1605,6 +1602,9 @@
   .text-\[15px\] {
     font-size: 15px;
   }
+  .text-\[16px\] {
+    font-size: 16px;
+  }
   .text-\[18px\] {
     font-size: 18px;
   }
@@ -1616,9 +1616,6 @@
   }
   .text-\[30px\] {
     font-size: 30px;
-  }
-  .text-\[40px\] {
-    font-size: 40px;
   }
   .text-\[42px\] {
     font-size: 42px;
@@ -1835,6 +1832,11 @@
       font-size: 18px;
     }
   }
+  .md\:text-\[20px\] {
+    @media (width >= 48rem) {
+      font-size: 20px;
+    }
+  }
   .md\:text-\[22px\] {
     @media (width >= 48rem) {
       font-size: 22px;
@@ -1843,6 +1845,11 @@
   .md\:text-\[32px\] {
     @media (width >= 48rem) {
       font-size: 32px;
+    }
+  }
+  .md\:text-\[40px\] {
+    @media (width >= 48rem) {
+      font-size: 40px;
     }
   }
   .md\:text-\[48px\] {
