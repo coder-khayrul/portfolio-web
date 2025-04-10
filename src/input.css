@@ -4,4 +4,31 @@
 @theme{
     --color-main: #593DAB;
     --shadow-hero-card: #593DAB30 10px 48px 100px 0px;
+    --shadow-badge: #593DAB30 0px 13px 27px -5px, #593DAB30 0px 8px 16px -8px;
 }
+
+
+.typing-effect-container p {
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+  }
+  .typing-effect-container p span.typed-text {
+    text-decoration: underline
+  }
+  .typing-effect-container p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  .typing-effect-container p span.cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+  }
