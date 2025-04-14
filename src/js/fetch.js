@@ -3,7 +3,7 @@
 
 const portfolioContainer = document.getElementById("portfolio-container")
 
- fetch("/portfolio.json")
+ fetch("portfolio.json")
   .then(res => res.json())
   .then(data => handlePortfolioItems(data));
 
