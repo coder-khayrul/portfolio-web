@@ -1740,6 +1740,9 @@
   .hidden {
     display: none;
   }
+  .inline-block {
+    display: inline-block;
+  }
   .table {
     display: table;
   }
@@ -1948,10 +1951,6 @@
     border-style: var(--tw-border-style);
     border-width: 20px;
   }
-  .border-y {
-    border-block-style: var(--tw-border-style);
-    border-block-width: 1px;
-  }
   .border-y-4 {
     border-block-style: var(--tw-border-style);
     border-block-width: 4px;
@@ -1980,9 +1979,6 @@
   }
   .border-white {
     border-color: var(--color-white);
-  }
-  .border-y-\[\#\#593DAB50\] {
-    border-block-color: ##593DAB50;
   }
   .border-y-\[\#593DAB50\] {
     border-block-color: #593DAB50;
@@ -2058,9 +2054,6 @@
   }
   .py-\[30px\] {
     padding-block: 30px;
-  }
-  .py-\[50px\] {
-    padding-block: 50px;
   }
   .py-\[60px\] {
     padding-block: 60px;
@@ -2198,6 +2191,12 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .outline-offset-5 {
+    outline-offset: 5px;
+  }
+  .outline-main {
+    outline-color: var(--color-main);
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -2397,6 +2396,17 @@
   .sm\:text-\[27px\] {
     @media (width >= 40rem) {
       font-size: 27px;
+    }
+  }
+  .md\:timeline-end {
+    @media (width >= 48rem) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      margin: calc(0.25rem * 1);
+      align-self: flex-start;
+      justify-self: center;
     }
   }
   .md\:flex {

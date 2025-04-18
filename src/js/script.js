@@ -44,15 +44,11 @@ document.addEventListener("DOMContentLoaded", function () { // On DOM Load initi
 
 //**Hanlde clients Slider */
 var clientSlider = new Swiper(".clientSlider", {
-  slidesPerView: 2,
+  slidesPerView: 4,
   spaceBetween: 20,
   autoplay: true,
   loop: true,
   speed: 3000,
-  // pagination: {
-  //   el: ".swiper-pagination-cs",
-  //   clickable: true,
-  // },
   autoplay: {
     delay: 0, // 0 for continuous autoplay
     disableOnInteraction: false,
