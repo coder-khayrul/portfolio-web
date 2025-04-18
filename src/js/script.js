@@ -42,6 +42,36 @@ document.addEventListener("DOMContentLoaded", function () { // On DOM Load initi
   if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
 
+//**Hanlde clients Slider */
+var clientSlider = new Swiper(".clientSlider", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  autoplay: true,
+  loop: true,
+  speed: 3000,
+  // pagination: {
+  //   el: ".swiper-pagination-cs",
+  //   clickable: true,
+  // },
+  autoplay: {
+    delay: 0, // 0 for continuous autoplay
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 50,
+    },
+    1024: {
+      slidesPerView: 7,
+      spaceBetween: 30,
+    },
+  },
+});
 
 //**Hanlde Swiper Slider */
 var swiper = new Swiper(".mySwiper", {

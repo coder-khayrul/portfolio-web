@@ -40,3 +40,6 @@
 span.swiper-pagination-bullet.swiper-pagination-bullet-active{
   background-color: #593DAB;
 }
+.clientSlider .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
