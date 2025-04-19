@@ -43,3 +43,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active{
 .clientSlider .swiper-wrapper {
   transition-timing-function: linear !important;
 }
+.portfolio-categories li.current{
+  background-color: #593DAB ;
+  color: white ;
+}

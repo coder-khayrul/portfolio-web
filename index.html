@@ -238,12 +238,13 @@
         </div>
         <!-- name of each tab group should be unique -->
         <div class="portfolio">
-          <ul class="flex justify-center gap-5 mt-10">
-            <li class="btn bg-main text-white">All</li>
-            <li class="btn bg-main text-white">SEO</li>
-            <li class="btn bg-main text-white">Meta Ads</li>
+          <ul class="flex justify-center gap-5 mt-10 portfolio-categories">
+            <li class="btn text-main bg-white current" data-category="all">All</li>
+            <li class="btn text-main bg-white" data-category="website_seo">Website SEO</li>
+            <li class="btn text-main bg-white" data-category="meta_ads">Meta Ads</li>
+            <li class="btn text-main bg-white" data-category="graphics_design">Graphics Design</li>
           </ul>
-          <div id="portfolio-container" class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-6 mt-15">
+          <div id="portfolio-container" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4  gap-6 mt-15">
           </div>
         </div>
       </div>
