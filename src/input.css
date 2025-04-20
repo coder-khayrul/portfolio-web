@@ -7,7 +7,9 @@
     --shadow-badge: #593DAB30 0px 13px 27px -5px, #593DAB30 0px 8px 16px -8px;
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 .typing-effect-container p {
     letter-spacing: 0.1rem;
     overflow: hidden;

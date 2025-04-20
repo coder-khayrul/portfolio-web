@@ -28,14 +28,17 @@
           <a class="text-2xl font-bold text-black">Sazid <span class="text-main">Salam</span></a>
         </div>
         <div class="navbar-center hidden md:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a
-                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium !hover:bg-transparent">Home</a>
-            </li>
-            <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">About</a></li>
-            <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Services</a></li>
-            <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Blogs</a></li>
-            <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Contact</a></li>
+          <ul class="menu menu-horizontal px-1 flex-wrap">
+            <li><a href="#services-section"
+                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Services</a></li>
+            <li><a href="#project-section"
+                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Projects</a></li>
+            <li><a href="#experience-section"
+                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Experience</a></li>
+            <li><a href="#testimonial-section"
+                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Testimonial</a></li>
+            <li><a href="#contact-section"
+                class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Contact</a></li>
           </ul>
         </div>
         <div class="navbar-end">
@@ -57,13 +60,16 @@
                 <a class="text-2xl font-bold  border-b border-b-[#5B78F630] text-black p-4 ">Sazzid <span
                     class="text-main">Salam</span></a>
                 <ul class="p-4">
-                  <li class="hover:bg-transparen"><a
-                      class="text-[#222] hover:text-main duration-700 text-[15px] font-medium t">Home</a>
-                  </li>
-                  <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">About</a></li>
-                  <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Services</a></li>
-                  <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Blogs</a></li>
-                  <li><a class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Contact</a></li>
+                  <li><a href="#services-section"
+                    class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Services</a></li>
+                <li><a href="#project-section"
+                    class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Projects</a></li>
+                <li><a href="#experience-section"
+                    class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Experience</a></li>
+                <li><a href="#testimonial-section"
+                    class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Testimonial</a></li>
+                <li><a href="#contact-section"
+                    class="text-[#222] hover:text-main duration-700 text-[15px] font-medium">Contact</a></li>
                   <li class="mt-5">
                     <a
                       class="bg-main text-white hover:text-main  py-4 hover:bg-white border border-transparent hover:border-main duration-700 flex text-[16px] font-medium justify-center">Hire
@@ -222,7 +228,7 @@
       </div>
     </section>
     <!--service section start-->
-    <section class="py-[80px] bg-white">
+    <section id="services-section" class=" py-[80px] bg-white">
       <div class="max-w-[95%] lg:max-w-10/12 2xl:max-w-[1365px] mx-auto">
         <div class="flex flex-col items-center justify-center mb-[60px]">
           <b class="text-center font-semibold text-main text-[16px] md:text-[20px]">Services</b>
@@ -278,7 +284,7 @@
       </div>
     </section>
     <!--portfolio-section-->
-    <section class="py-20 bg-[#F5F3FA] ">
+    <section id="project-section" class="py-20 bg-[#F5F3FA] ">
       <div class="max-w-[95%] lg:max-w-10/12 2xl:max-w-[1365px] mx-auto">
         <div class="flex flex-col items-center justify-center">
           <b class="text-center font-semibold text-main text-[16px] md:text-[20px]">Projects</b>
@@ -287,10 +293,18 @@
         <!-- name of each tab group should be unique -->
         <div class="portfolio">
           <ul class="flex justify-center gap-5 mt-10 portfolio-categories flex-wrap">
-            <li class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow border border-main  duration-700 hover:bg-main hover:text-white current" data-category="all">All</li>
-            <li class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main" data-category="website_seo">Website SEO</li>
-            <li class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main" data-category="meta_ads">Meta Ads</li>
-            <li class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main" data-category="graphics_design">Graphics Design</li>
+            <li
+              class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow border border-main  duration-700 hover:bg-main hover:text-white current"
+              data-category="all">All</li>
+            <li
+              class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main"
+              data-category="website_seo">Website SEO</li>
+            <li
+              class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main"
+              data-category="meta_ads">Meta Ads</li>
+            <li
+              class="text-main bg-white px-3 py-2 rounded-md cursor-pointer hover:shadow duration-700 hover:bg-main hover:text-white border border-main"
+              data-category="graphics_design">Graphics Design</li>
           </ul>
           <div id="portfolio-container" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4  gap-6 mt-15">
           </div>
@@ -298,7 +312,7 @@
       </div>
     </section>
     <!--Experience Section start-->
-    <section class="py-[80px] bg-white">
+    <section id="experience-section" class=" py-[80px] bg-white">
       <div class="max-w-[95%] lg:max-w-10/12 2xl:max-w-[1365px] mx-auto">
         <div class="flex flex-col items-center justify-center mb-[60px]">
           <b class="text-center font-semibold text-main text-[16px] md:text-[20px]">Experience</b>
@@ -425,7 +439,7 @@
       </div>
     </section> -->
     <!--testimonial section start-->
-    <section class="bg-[#F5F3FA] py-[80px] px-4">
+    <section id="testimonial-section" class="bg-[#F5F3FA] py-[80px] px-4">
       <div class="max-w-[95%] lg:max-w-10/12 2xl:max-w-[1365px] mx-auto">
         <div class="flex flex-col items-center justify-center">
           <b class="text-center font-semibold text-main text-[16px] md:text-[20px]">Testimonial</b>
@@ -527,25 +541,28 @@
       </div>
     </section>
     <!--contact section start-->
-    <section class=" py-[80px] bg-white">
+    <section id="contact-section" class=" py-[80px] bg-white">
       <div class="max-w-[95%] lg:max-w-10/12 2xl:max-w-[1365px] mx-auto">
         <div class="flex flex-col items-center justify-center">
           <b class="text-center font-semibold text-main text-[16px] md:text-[20px]">Contact</b>
           <h2 class="text-center font-semibold text-[30px] md:text-[40px] mt-2 text-black">Get In Touch</h2>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST" class="mt-8 text-[#323232] w-[95%] md:w-[700px] mx-auto grid gap-6">
+        <form action="https://api.web3forms.com/submit" method="POST"
+          class="mt-8 text-[#323232] w-[95%] md:w-[700px] mx-auto grid gap-6">
           <input type="hidden" name="access_key" value="a8e994c5-ad7c-4bf6-8c8f-755160a1cb5b" />
           <input type="hidden" name="subject" value="New Contact Form Submission from Your Website" />
           <input type="hidden" name="from_name" value="My Website" />
           <div>
             <label for="name" class="block mb-2 font-medium text-gray-700">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name"
-              class="w-full  px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main " required/>
+              class="w-full  px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main "
+              required />
           </div>
           <div>
             <label for="email" class="block mb-2 font-medium text-gray-700">Email</label>
             <input type="email" id="email" name="email" placeholder="Your email"
-              class="w-full  px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main " required/>
+              class="w-full  px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main "
+              required />
           </div>
           <div>
             <label for="phone" class="block mb-2 font-medium text-gray-700">Phone</label>
@@ -555,9 +572,11 @@
           <div>
             <label for="message" class="block mb-2 font-medium text-gray-700 ">Message</label>
             <textarea id="message" name="message" placeholder="Your message"
-              class="w-full min-h-[120px] px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main resize-none" required></textarea>
+              class="w-full min-h-[120px] px-4 py-4 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-main resize-none"
+              required></textarea>
           </div>
-          <button type="submit" class="w-full mt-2 bg-main text-white py-3 rounded-md hover:bg-white transition cursor-pointer duration-700 hover:text-main  border hover:border-main">
+          <button type="submit"
+            class="w-full mt-2 bg-main text-white py-3 rounded-md hover:bg-white transition cursor-pointer duration-700 hover:text-main  border hover:border-main">
             Send Message
           </button>
         </form>
@@ -572,12 +591,14 @@
             <div class="">
               <a class="text-2xl font-bold text-black">Sazzid <span class="text-main">Salam</span></a>
             </div>
-            <p class="text-[14px] mt-3 text-black">Copyright © 2025 <span class="text-main">Sazzid Salam</span> reserved</p>
+            <p class="text-[14px] mt-3 text-black">Copyright © 2025 <span class="text-main">Sazzid Salam</span> reserved
+            </p>
           </div>
           <div class="flex flex-col items-center justify-center order-1 lg:order-2">
             <img class="w-[100px] h-[100px] rounded-full border border-main mb-4 outline outline-main outline-offset-5"
               src="./src/image/sazid-salam-hero.png" alt="">
-            <p class="text-center text-[14px] font-medium italic my-4 w-[95%] md:w-[80%] lg:w-full text-[#323232]">Let’s connect for
+            <p class="text-center text-[14px] font-medium italic my-4 w-[95%] md:w-[80%] lg:w-full text-[#323232]">Let’s
+              connect for
               your next project—SEO, CAPI tracking, social media marketing, graphic design, Meta ads, and more.</p>
             <ul class="flex gap-3 mt-2">
               <li><a href="https://www.facebook.com/sazzid.salamshoaib" target="_blank"
