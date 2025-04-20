@@ -8,16 +8,15 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-yellow-400: oklch(85.2% 0.199 91.936);
-    --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --container-2xl: 42rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-2xl: 1.5rem;
@@ -182,6 +181,49 @@
   }
 }
 @layer utilities {
+  .modal {
+    pointer-events: none;
+    visibility: hidden;
+    position: fixed;
+    inset: calc(0.25rem * 0);
+    margin: calc(0.25rem * 0);
+    display: grid;
+    height: 100%;
+    max-height: none;
+    width: 100%;
+    max-width: none;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+    padding: calc(0.25rem * 0);
+    color: inherit;
+    overflow-x: hidden;
+    transition: transform 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
+    overflow-y: hidden;
+    overscroll-behavior: contain;
+    z-index: 999;
+    &::backdrop {
+      display: none;
+    }
+    &.modal-open, &[open], &:target {
+      background-color: oklch(0% 0 0/ 0.4);
+      transition: transform 0.3s ease-out, background-color 0.3s ease-out, opacity 0.1s ease-out;
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 100%;
+      .modal-box {
+        translate: 0 0;
+        scale: 1;
+        opacity: 1;
+      }
+    }
+    @starting-style {
+      &.modal-open, &[open], &:target {
+        visibility: hidden;
+        opacity: 0%;
+      }
+    }
+  }
   .drawer-side {
     pointer-events: none;
     visibility: hidden;
@@ -1049,9 +1091,6 @@
   .mb-\[60px\] {
     margin-bottom: 60px;
   }
-  .mb-\[80px\] {
-    margin-bottom: 80px;
-  }
   .navbar {
     display: flex;
     width: 100%;
@@ -1090,6 +1129,21 @@
   }
   .inline-block {
     display: inline-block;
+  }
+  .modal-bottom {
+    place-items: end;
+    :where(.modal-box) {
+      height: auto;
+      width: 100%;
+      max-width: none;
+      max-height: calc(100vh - 5em);
+      translate: 0 100%;
+      scale: 1;
+      --modal-tl: var(--radius-box);
+      --modal-tr: var(--radius-box);
+      --modal-bl: 0;
+      --modal-br: 0;
+    }
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
@@ -1157,9 +1211,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-2xl {
-    max-width: var(--container-2xl);
-  }
   .max-w-\[95\%\] {
     max-width: 95%;
   }
@@ -1198,6 +1249,9 @@
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .place-items-center {
     place-items: center;
@@ -1265,9 +1319,9 @@
     border-style: var(--tw-border-style);
     border-width: 20px;
   }
-  .border-y-4 {
+  .border-y-2 {
     border-block-style: var(--tw-border-style);
-    border-block-width: 4px;
+    border-block-width: 2px;
   }
   .border-b {
     border-bottom-style: var(--tw-border-style);
@@ -1300,8 +1354,8 @@
   .border-b-\[\#5B78F630\] {
     border-bottom-color: #5B78F630;
   }
-  .bg-\[\#593DAB10\] {
-    background-color: #593DAB10;
+  .bg-\[\#F5F3FA\] {
+    background-color: #F5F3FA;
   }
   .bg-\[\#f4f5f7\] {
     background-color: #f4f5f7;
@@ -1320,9 +1374,6 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -1354,8 +1405,14 @@
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
   }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
@@ -1366,8 +1423,8 @@
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
-  .py-\[10px\] {
-    padding-block: 10px;
+  .py-\[20px\] {
+    padding-block: 20px;
   }
   .py-\[25px\] {
     padding-block: 25px;
@@ -1383,9 +1440,6 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pb-\[80px\] {
-    padding-bottom: 80px;
   }
   .\!text-left {
     text-align: left !important;
@@ -1464,8 +1518,14 @@
   .text-\[\#999\] {
     color: #999;
   }
+  .text-\[\#323232\] {
+    color: #323232;
+  }
   .text-base-content {
     color: var(--color-base-content);
+  }
+  .text-black {
+    color: var(--color-black);
   }
   .text-gray-500 {
     color: var(--color-gray-500);
@@ -1494,13 +1554,22 @@
   .italic {
     font-style: italic;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow-hero-card {
-    --tw-shadow: var(--tw-shadow-color, #593DAB30) 10px 48px 100px 0px;
+    --tw-shadow: var(--tw-shadow-color, #E0DAEF) 10px 48px 100px 0px;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-\[\#E0DAEF\] {
+    --tw-shadow-color: #E0DAEF;
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, #E0DAEF var(--tw-shadow-alpha), transparent);
+    }
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -1545,6 +1614,20 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         rotate: 12deg;
+      }
+    }
+  }
+  .group-hover\:text-main {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-main);
+      }
+    }
+  }
+  .group-hover\:text-white {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-white);
       }
     }
   }
@@ -1598,10 +1681,18 @@
       }
     }
   }
+  .hover\:shadow {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+      }
+    }
+  }
   .hover\:shadow-badge {
     &:hover {
       @media (hover: hover) {
-        --tw-shadow: var(--tw-shadow-color, #593DAB30) 0px 13px 27px -5px, var(--tw-shadow-color, #593DAB30) 0px 8px 16px -8px;
+        --tw-shadow: var(--tw-shadow-color, #E0DAEF) 0px 13px 27px -5px, var(--tw-shadow-color, #E0DAEF) 0px 8px 16px -8px;
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
     }
@@ -1609,7 +1700,7 @@
   .hover\:shadow-hero-card {
     &:hover {
       @media (hover: hover) {
-        --tw-shadow: var(--tw-shadow-color, #593DAB30) 10px 48px 100px 0px;
+        --tw-shadow: var(--tw-shadow-color, #E0DAEF) 10px 48px 100px 0px;
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
     }
@@ -1628,9 +1719,9 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
-  .focus\:ring-blue-600 {
+  .focus\:ring-main {
     &:focus {
-      --tw-ring-color: var(--color-blue-600);
+      --tw-ring-color: var(--color-main);
     }
   }
   .focus\:outline-none {
@@ -1674,6 +1765,23 @@
             grid-row-start: none;
           }
         }
+      }
+    }
+  }
+  .sm\:modal-middle {
+    @media (width >= 40rem) {
+      place-items: center;
+      :where(.modal-box) {
+        height: auto;
+        width: calc(11/12 * 100%);
+        max-width: 32rem;
+        max-height: calc(100vh - 5em);
+        translate: 0 2%;
+        scale: 98%;
+        --modal-tl: var(--radius-box);
+        --modal-tr: var(--radius-box);
+        --modal-bl: var(--radius-box);
+        --modal-br: var(--radius-box);
       }
     }
   }
@@ -1727,6 +1835,11 @@
       width: 90%;
     }
   }
+  .md\:w-\[700px\] {
+    @media (width >= 48rem) {
+      width: 700px;
+    }
+  }
   .md\:w-\[calc\(100\%_-_70px\)\] {
     @media (width >= 48rem) {
       width: calc(100% - 70px);
@@ -1770,6 +1883,11 @@
   .md\:text-\[15px\] {
     @media (width >= 48rem) {
       font-size: 15px;
+    }
+  }
+  .md\:text-\[16px\] {
+    @media (width >= 48rem) {
+      font-size: 16px;
     }
   }
   .md\:text-\[18px\] {
@@ -1942,6 +2060,14 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .portfolio-categories li.current {
   background-color: #593DAB;
   color: white;
+}
+.clientSlider .swiper-slide img {
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
+}
+hr {
+  background: #E0DAEF;
 }
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {

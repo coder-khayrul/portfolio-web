@@ -3,8 +3,8 @@
 
 @theme{
     --color-main: #593DAB;
-    --shadow-hero-card: #593DAB30 10px 48px 100px 0px;
-    --shadow-badge: #593DAB30 0px 13px 27px -5px, #593DAB30 0px 8px 16px -8px;
+    --shadow-hero-card: #E0DAEF 10px 48px 100px 0px;
+    --shadow-badge: #E0DAEF 0px 13px 27px -5px, #E0DAEF 0px 8px 16px -8px;
 }
 
 
@@ -46,4 +46,12 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active{
 .portfolio-categories li.current{
   background-color: #593DAB ;
   color: white ;
+}
+.clientSlider .swiper-slide img {
+  aspect-ratio: 3/2;
+object-fit: contain;  
+mix-blend-mode: color-burn;
+}
+hr {
+  background: #E0DAEF;
 }

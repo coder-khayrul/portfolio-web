@@ -60,7 +60,7 @@ var clientSlider = new Swiper(".clientSlider", {
     },
     768: {
       slidesPerView: 6,
-      spaceBetween: 50,
+      spaceBetween: 30,
     },
     1024: {
       slidesPerView: 7,

@@ -3,7 +3,7 @@
 
 const portfolioContainer = document.getElementById("portfolio-container")
 const portfolioCategories = document.querySelectorAll(".portfolio-categories li")
-const modalItems = document.querySelectorAll(".openModal")
+
 //handling default category display
 fetch("portfolio.json")
   .then(res => res.json())
@@ -24,7 +24,7 @@ portfolioCategories.forEach((category) => {
       .then(res => res.json())
       .then(data => handlePortfolioItems(data, currentCateogoryId));
   })
-  
+
 })
 //_____________//
 
@@ -44,17 +44,19 @@ const handleItemAppend = (items) => {
     const child = document.createElement("div");
     child.innerHTML = `
        <div class="p-5 bg-white rounded-lg mb-4 border border-[#f4f5f7] hover:shadow-badge duration-700">
-            <div class="openModal cursor-pointer border-2 p-2 border-[#593DAB] rounded-lg overflow-hidden group">
+            <div onclick="my_modal_${item.id}.showModal()" class="openModal cursor-pointer border-2 p-2 border-[#593DAB] rounded-lg overflow-hidden group">
              <img class="group-hover:scale-[1.2] group-hover:rotate-12 duration-700" loading="lazy"
                 src="${item.image}" loading="lazy" alt="">
             </div>
             <div class="pt-4">
-              <h3 class="text-[18px] font-semibold mb-2">${item.title}</h3>
-              <span class="text-[16px] text-[#999]">${item.category_name}</span>
+              <h3 class="text-[16px] md:text-[18px] font-semibold mb-2 text-black group-hover:text-main duration-700">${item.title}</h3>
+              <span class="text-[14px] md:text-[16px] text-[#999]">${item.category_name}</span>
             </div>
           </div>
+          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
     `
     portfolioContainer.appendChild(child);
   })
+
 }
 //------------//
