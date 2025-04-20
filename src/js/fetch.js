@@ -44,7 +44,7 @@ const handleItemAppend = (items) => {
     const child = document.createElement("div");
     child.innerHTML = `
        <div class="p-5 bg-white rounded-lg mb-4 border border-[#f4f5f7] hover:shadow-badge duration-700">
-            <div onclick="my_modal_${item.id}.showModal()" class="openModal cursor-pointer border-2 p-2 border-[#593DAB] rounded-lg overflow-hidden group">
+            <div class="openModal cursor-pointer border-2 p-2 border-[#593DAB] rounded-lg overflow-hidden group">
              <img class="group-hover:scale-[1.2] group-hover:rotate-12 duration-700" loading="lazy"
                 src="${item.image}" loading="lazy" alt="">
             </div>
